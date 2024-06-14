@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romboedro</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+    
+</head>
+<body>
+    <h1>Romboedro</h1>
+    <img src="assets/romboedro.png" alt="romboedro">
+    <p>Romboedro: Um romboedro é um poliedro de seis faces (hexaedro), todas elas losangos idênticos. Não se trata de um poliedro regular, porque ainda que suas faces sejam todas iguais (uniformes), não são polígonos regulares. O romboedro é um paralelepípedo capaz de preencher o espaço.</p>
+
+    <hr>
+
+    <h2>Calcule a Área do Romboedro</h2>
+
+<form id="romboedroForm">
+    <label for="ladoA">Lado A:</label><br><br>
+
+    <input type="number" id="ladoA" name="ladoA" required><br><br>
+    
+    <label for="ladoB">Lado B:</label><br><br>
+
+    <input type="number" id="ladoB" name="ladoB" required><br><br>
+    
+    <label for="alt">Altura:</label><br><br>
+
+    <input type="number" id="alt" name="alt" required><br><br>
+    
+    <button type="submit">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    document.getElementById("romboedroForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        let ladoA = parseFloat(document.getElementById("ladoA").value);
+        let ladoB = parseFloat(document.getElementById("ladoB").value);
+        let altura = parseFloat(document.getElementById("alt").value);
+        
+        let area = 2 * (ladoA * ladoB + ladoA * altura + ladoB * altura);
+        
+        document.getElementById("resultado").innerHTML = "A área do romboedro é: " + area.toFixed(2);
+    });
+</script>
+
+    
+</body>
+</html>

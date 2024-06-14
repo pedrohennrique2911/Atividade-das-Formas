@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+</head>
+
+    <h1>Circulo</h1>
+    <img src="assets/circulo.png" alt="circulo">
+    <p> Praticar o uso da constante <strong>π (pi)</strong> e a potenciação.</p><br>
+    <hr>
+    <h2>Calcule a Área do Círculo</h2>
+
+<form id="circuloForm">
+    <label for="raio">Digite o <strong>Raio</strong> do circulo:</label><br><br>
+    <input type="number" id="raio" name="raio" required><br><br>
+    <button type="submit">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    document.getElementById("circuloForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        
+        let radius = parseFloat(document.getElementById("raio").value);
+        
+        let area = Math.PI * radius * radius;
+        
+        document.getElementById("resultado").innerHTML = "A área do círculo é: " + area.toFixed(2);
+    });
+</script>
+
+    
+</body>
+</html>

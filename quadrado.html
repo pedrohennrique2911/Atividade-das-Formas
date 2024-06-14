@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+    
+</head>
+<body>
+    <h1>Quadrado</h1>
+    <img src="assets/quadrado.png" alt="quadrado">
+    <p>O cálculo da área de um quadrado é simples, bastando multiplicar o lado pelo lado.</p>
+
+    <hr>
+
+    <h2>Calcule a Área do Quadrado</h2>
+    
+
+<form id="quadradoForm">
+    <label for="lado">Digite o comprimento do lado:</label><br><br>
+
+    <input type="number" id="squarelado" name="squarelado" required><br><br>
+
+    <button type="submit">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    document.getElementById("quadradoForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        let lado = parseFloat(document.getElementById("squarelado").value);
+        
+        let area = lado * lado;
+        
+        document.getElementById("resultado").innerHTML = `A área do quadrado é ${ area.toFixed(2)}`
+    });
+</script>
+
+    
+</body>
+</html>

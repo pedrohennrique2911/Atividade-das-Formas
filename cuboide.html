@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubóide</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+    
+</head>
+<body>
+    <h1>Cubóide</h1>
+    <img src="assets/cuboid.png" alt="cuboide">
+    <p>Vamos calcular a área de um Cubóide</p>
+   
+        <h2>Calcule a Área do Cubóide</h2>
+        <form id="cuboideForm">
+            <label for="comp">Comprimento:</label><br><br>
+            <input type="number" id="comp" name="comp" required><br><br>
+    
+            <label for="larg">Largura:</label><br><br>
+            <input type="number" id="larg" name="larg" required><br><br>
+    
+            <label for="alt">Altura:</label><br><br>
+            <input type="number" id="alt" name="alt" required><br><br>
+    
+            <button type="submit">Calcular</button>
+        </form>
+        <div id="resultado"></div>
+   
+    
+    <script>
+    document.getElementById('cuboideForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        let comprimento = Number(document.getElementById('comp').value);
+
+        let largura = Number(document.getElementById('larg').value);
+
+        let altura = Number(document.getElementById('alt').value);
+    
+        let area = 2 * ((comprimento * largura) + (comprimento * altura) + (largura * altura));
+    
+
+        document.getElementById('resultado').innerHTML = `A área do cubóide é ${ area.toFixed(2)}`;
+    });
+    </script>
+</body>
+</html>

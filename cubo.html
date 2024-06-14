@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+</head>
+
+<body>
+    <h1>Cubo</h1>
+    <img src="assets/cubo.png" alt="cubo">
+    <p>É o sólido formado por uma secção transversal, paralela à base, com faces laterais trapezoidais e bases poligonais.</p>
+    <hr>
+    <h2>Calcule a Área do Cubo</h2>
+
+<form id="cuboForm">
+    <label for="lado">Lado:</label><br><br>
+    <input type="number" id="lado" name="lado" required><br><br>
+    <button type="submit">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    document.getElementById("cuboForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita o comportamento padrão do formulário
+        
+        // Obtemos o valor do lado do cubo do campo de entrada
+        var side = parseFloat(document.getElementById("lado").value);
+        
+        // Calculamos a área do cubo
+        var area = 6 * side * side;
+        
+        // Exibimos o resultado
+        document.getElementById("resultado").innerHTML = "A área do cubo é: " + area.toFixed(2);
+    });
+</script>
+</body>
+</html>

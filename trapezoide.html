@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trapezóide Irregular</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+    
+</head>
+<body>
+    <h1>Trapezóide Irregular</h1>
+    <img src="assets/trapezoid.png" alt="trapezoide">
+    <p>Onde os quatro lados têm diferentes comprimentos. Teremos que aplicar fórmulas de geometria mais avançadas para chegar à área correta.</p>
+    <h2>Calcule a Área do Trapézoide Irregular</h2>
+
+<form id="trapezoideForm">
+    <label for="base1">Base maior:</label><br><br>
+
+    <input type="number" id="base1" name="base1" required><br><br>
+    
+    <label for="base2">Base menor:</label><br><br>
+
+    <input type="number" id="base2" name="base2" required><br><br>
+   
+    <label for="alt">Altura:</label><br><br>
+
+    <input type="number" id="alt" name="alt" required><br><br>
+    
+    <button type="submit">Calcular</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    document.getElementById("trapezoideForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        
+        let base1 = parseFloat(document.getElementById("base1").value);
+        let base2 = parseFloat(document.getElementById("base2").value);
+        let altura = parseFloat(document.getElementById("alt").value);
+        
+        let area = (base1 + base2) * altura / 2;
+    
+        document.getElementById("resultado").innerHTML = "A área do trapézio irregular é: " + area.toFixed(2);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polígono Regular</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+    
+</head>
+<body>
+    <h1>Polígno Regular</h1>
+    <img src="assets/poligono.png" alt="poligono">
+    <p>Um polígono diz-se regular se tiver todos os seus lados iguais e todos os seus ângulos iguais, sejam eles internos ou externos. Todo polígono regular pode ser inscrito em uma circunferência. </p>
+
+    <hr>
+
+    <h2>Calcule a Área do Polígono Regular com <strong>N</strong> lados</h2>
+    <form id="poligonoForm">
+        <label for="numLados"><strong>Escolha o número de lados:</strong></label>
+        <select id="numLados" name="numLados">
+            <option value="5">Pentágono (5 lados)</option>
+            <option value="6">Hexágono (6 lados)</option>
+            <option value="7">Heptágono (7 lados)</option>
+        
+        </select>
+        <br>
+        <label for="compLado" id=lado_label>Lado:</label><br><br>
+        <input type="number" id="compLado" name="compLado" required><br><br>
+        <button type="submit">Calcular</button>
+    </form>
+    
+    <div id="resultado"></div>
+    
+    <script>
+        document.getElementById("poligonoForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+            let numLados = parseFloat(document.getElementById("numLados").value);
+            let compLados = parseFloat(document.getElementById("numLados").value);
+            
+            let angCentro = (2 * Math.PI) / numLados;
+            let triaguloArea = 0.5 * compLados * compLados * Math.sin(angCentro); 
+            let area = triaguloArea * numLados; 
+ 
+            document.getElementById("resultado").innerHTML = "A área do polígono regular é: " + area.toFixed(2);
+        });
+    </script>
+    
+
+
+
+</body>
+</html>
